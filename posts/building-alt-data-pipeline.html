@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building an Alternative Data Pipeline | Li Yifei</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Li<span>Yifei</span></a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../posts.html" class="nav-link active">Posts</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="post-content">
+            <a href="../posts.html" class="back-link">&larr; Back to posts</a>
+
+            <header class="post-header">
+                <h1>Building an Alternative Data Pipeline for Investment Research</h1>
+                <div class="post-header-meta">
+                    <span>December 2025</span>
+                    <span>8 min read</span>
+                </div>
+            </header>
+
+            <div class="post-body">
+                <p>
+                    Alternative data has become increasingly important for investment research, providing insights that
+                    traditional financial data cannot capture. In this post, I'll share my experience building alt-data
+                    pipelines for hardware and raw materials tracking.
+                </p>
+
+                <h2>The Challenge</h2>
+                <p>
+                    Investment analysts often rely on scattered web sources, vendor feeds, and industry reports to track
+                    market trends. The goal was to build a system where "what analysts see is what AI sees" - ingesting
+                    these diverse sources into unified, trackable datasets.
+                </p>
+
+                <h2>Data Sources</h2>
+                <p>We focused on several key categories:</p>
+                <ul>
+                    <li><strong>Memory prices:</strong> DRAM/NAND contract prices, DDR4/DDR5 spot prices</li>
+                    <li><strong>Semiconductor materials:</strong> Chip/wafer prices, silicon pricing</li>
+                    <li><strong>Rare metals:</strong> Ga/In/Ge (Gallium, Indium, Germanium) for semiconductor applications</li>
+                    <li><strong>Base metals:</strong> LME and SMM non-ferrous metal time series</li>
+                </ul>
+
+                <h2>Architecture Design</h2>
+                <p>
+                    The pipeline uses MongoDB + object storage as a lightweight data lake. This approach offers flexibility
+                    for semi-structured data while maintaining query performance for time series analysis.
+                </p>
+
+                <h3>ETL Pipeline Components</h3>
+                <ul>
+                    <li>Web crawlers with rate limiting and retry logic</li>
+                    <li>Schema standardization layer</li>
+                    <li>Update frequency management (daily/weekly)</li>
+                    <li>Data quality validation</li>
+                </ul>
+
+                <h2>Derived Indicators</h2>
+                <p>
+                    Beyond raw price collection, we designed indicators to monitor:
+                </p>
+                <ul>
+                    <li><strong>Level:</strong> Current price positioning relative to historical ranges</li>
+                    <li><strong>Slope:</strong> Rate of change for trend identification</li>
+                    <li><strong>Cross-sectional spreads:</strong> Price differentials across products (e.g., DDR4 vs DDR5)</li>
+                </ul>
+
+                <h2>Key Learnings</h2>
+                <p>
+                    Building alt-data pipelines taught me that data engineering for finance is as much about domain
+                    understanding as technical implementation. Knowing which price movements matter and how analysts
+                    use the data shapes every design decision.
+                </p>
+
+                <blockquote>
+                    The best data infrastructure is invisible to analysts - they just see clean, timely data
+                    ready for analysis.
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Li Yifei. Built with purpose.</p>
+        </footer>
+    </div>
+</body>
+</html>

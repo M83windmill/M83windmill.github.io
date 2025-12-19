@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM-Powered Data Extraction | Li Yifei</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Li<span>Yifei</span></a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../posts.html" class="nav-link active">Posts</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="post-content">
+            <a href="../posts.html" class="back-link">&larr; Back to posts</a>
+
+            <header class="post-header">
+                <h1>LLM-Powered Data Extraction: From Unstructured to Structured</h1>
+                <div class="post-header-meta">
+                    <span>November 2025</span>
+                    <span>10 min read</span>
+                </div>
+            </header>
+
+            <div class="post-body">
+                <p>
+                    Research content comes in many forms: PDF reports, HTML pages, news articles, WeChat posts,
+                    meeting notes, and emails. Extracting structured data from these sources has traditionally
+                    required custom parsers for each format. LLMs offer a more flexible approach.
+                </p>
+
+                <h2>The Problem Space</h2>
+                <p>
+                    Investment research teams receive hundreds of documents daily. Manually extracting key information
+                    like ticker symbols, price targets, supply/demand views, and sentiment is time-consuming and
+                    inconsistent. We needed an automated solution that could:
+                </p>
+                <ul>
+                    <li>Process multiple document formats uniformly</li>
+                    <li>Extract standardized fields reliably</li>
+                    <li>Handle domain-specific terminology</li>
+                    <li>Scale to high document volumes</li>
+                </ul>
+
+                <h2>Agent Design</h2>
+                <p>
+                    The key insight was making the extraction process <em>controllable</em>. Rather than letting the
+                    LLM freely interpret documents, we designed structured prompts that specify exactly what fields
+                    to extract and how to format them.
+                </p>
+
+                <h3>Extracted Fields</h3>
+                <ul>
+                    <li><strong>Entity identification:</strong> Ticker, company name, product</li>
+                    <li><strong>Geographic context:</strong> Region, market</li>
+                    <li><strong>Quantitative data:</strong> Price, volume, time series</li>
+                    <li><strong>Qualitative views:</strong> Supply/demand outlook, sentiment</li>
+                </ul>
+
+                <h2>Implementation Challenges</h2>
+                <p>
+                    Several challenges emerged during development:
+                </p>
+                <ul>
+                    <li><strong>Hallucination control:</strong> LLMs sometimes generate plausible but incorrect data.
+                        We implemented validation against known reference data.</li>
+                    <li><strong>Format consistency:</strong> Ensuring output tables follow exact schemas required
+                        careful prompt engineering and post-processing.</li>
+                    <li><strong>Cost management:</strong> Processing large documents can be expensive. We implemented
+                        chunking strategies and caching.</li>
+                </ul>
+
+                <h2>Results</h2>
+                <p>
+                    The system now processes research content into semi-structured tables that feed directly into
+                    our data lake. Analysts can query extracted insights without reading full documents, while
+                    maintaining links to source material for verification.
+                </p>
+
+                <blockquote>
+                    LLMs aren't replacing human analysis - they're accelerating the data preparation
+                    that enables deeper analysis.
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Li Yifei. Built with purpose.</p>
+        </footer>
+    </div>
+</body>
+</html>
