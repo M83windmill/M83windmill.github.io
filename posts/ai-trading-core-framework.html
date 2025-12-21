@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trading Core Framework | Li Yifei</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Li<span>Yifei</span></a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../posts.html" class="nav-link active">Posts</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="post-content">
+            <a href="../posts.html" class="back-link">&larr; Back to posts</a>
+
+            <header class="post-header">
+                <h1>AI Trading Core Framework: From Signals to Guardrails</h1>
+                <div class="post-header-meta">
+                    <span>Jan 2026</span>
+                    <span>12 min read</span>
+                </div>
+            </header>
+
+            <div class="post-body">
+                <p>
+                    This is a diagram-ready summary of an AI trading core framework. The key idea is that AI is not
+                    just issuing signals—it acts as a <strong>Trader</strong> executing within strict rules and guardrails,
+                    while you, as the PM, own objectives, risk boundaries, approvals, and post-trade review.
+                    This is a bidirectional human–AI alignment workflow.
+                </p>
+
+                <h2>One-sentence vision</h2>
+                <p>
+                    AI executes, PM sets goals and boundaries; structured evidence, guardrails, and review make
+                    decisions transparent, controllable, and auditable.
+                </p>
+
+                <h2>System modules: six layers</h2>
+
+                <h3>1) Inputs</h3>
+                <ul>
+                    <li><strong>Quant signals:</strong> classic factors, technical indicators, statistical models.</li>
+                    <li><strong>Text streams:</strong> news, research, filings, social content, extracted with LLMs.</li>
+                    <li><strong>Charts/technical structure:</strong> candles, patterns, key levels, volatility regimes.</li>
+                </ul>
+
+                <h3>2) Sensemaking / Structuring</h3>
+                <ul>
+                    <li>Text extraction: event → entity → time → direction → confidence → evidence/provenance.</li>
+                    <li>Chart outputs: annotated visuals (triggers, patterns, support/resistance, risk zones).</li>
+                </ul>
+                <p>
+                    Making decision evidence explicit improves trust and collaboration with AI, especially in trading
+                    where uncertainty disclosure matters.
+                </p>
+
+                <h3>3) Policy + Planner</h3>
+                <ul>
+                    <li>Fuse quant + text + technical inputs into intent (long/short/flat), size, pricing, and invalidation.</li>
+                    <li>Design the AI as a policy-constrained agent that can act only inside approved risk policies.</li>
+                </ul>
+
+                <h3>4) Guardrails / Pre-trade Controls</h3>
+                <ul>
+                    <li>Quantity/amount/frequency limits: max single order, daily totals, order rate.</li>
+                    <li>Price sanity checks: bid/ask deviation thresholds, drift detection.</li>
+                    <li>Market depth checks: avoid sweeping the book.</li>
+                    <li>Self-trade prevention, instrument bans, account-level limits.</li>
+                </ul>
+                <p>
+                    The critical point: AI decisions do not equal orders. Every trade must pass rule-based,
+                    auditable, and backtestable checks.
+                </p>
+
+                <h3>5) Execution + Monitoring</h3>
+                <ul>
+                    <li>Execution: place, cancel, modify, slice orders; slippage control.</li>
+                    <li>Monitoring: P&amp;L, risk exposure, volatility spikes, data quality, model drift.</li>
+                    <li>Emergency shutdown/degrade: explicit triggers (repeated anomalies, data failures, limit breaches).</li>
+                </ul>
+
+                <h3>6) Audit / Post-trade Review</h3>
+                <ul>
+                    <li>Record: data versions, features, signals, prompts/outputs, rationale, guardrail results, orders.</li>
+                    <li>Review: which rules held up, failure modes, and new guardrails to add.</li>
+                </ul>
+                <p>
+                    Borrow from model risk management: effective challenge, ongoing validation, monitoring,
+                    outcome analysis, and documentation.
+                </p>
+
+                <h2>Human–AI collaboration: what the PM console should show</h2>
+                <ul>
+                    <li><strong>Strategy intent panel:</strong> targets (return/drawdown), risk budget, allowed instruments, leverage ranges.</li>
+                    <li><strong>Evidence &amp; rationale panel:</strong> cited text evidence + structured extraction; annotated charts.</li>
+                    <li><strong>Guardrail status panel:</strong> which checks passed/failed and why.</li>
+                    <li><strong>Review &amp; learning panel:</strong> timeline of signal → decision → order → outcome → explanation.</li>
+                </ul>
+
+                <h2>Minimum viable version (MVP)</h2>
+                <ul>
+                    <li>Start with paper trading / sandbox—avoid real capital at first.</li>
+                    <li>Focus on 1 market + 3 actions (open/close/stop-loss).</li>
+                    <li>Start with 5 guardrails: single-order size, single-order value, price deviation, order rate, emergency stop.</li>
+                    <li>UI first: “annotated chart” + “guardrail pass/fail reasons”.</li>
+                    <li>Log reviews from day one—stability depends on it.</li>
+                </ul>
+
+                <blockquote>
+                    Build the system as an explainable execution machine, not a black-box signal generator—
+                    that is the path to scale and long-term reliability.
+                </blockquote>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Li Yifei. Built with purpose.</p>
+        </footer>
+    </div>
+</body>
+</html>
